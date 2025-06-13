@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#012169" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/pp32.png" />
+  <link rel="dns-prefetch" href="https://www.paypalobjects.com/" />
+  <link rel="stylesheet"
+    href="https://www.paypalobjects.com/paypal-ui/web/fonts-and-normalize/3-0-0/fonts-and-normalize.min.css" />
+  <title>设置您的企业账户——PayPal</title>
+  <style>
+    :root {
+      --main-color: #012169;
+      --main-bg: #f6f7fb;
+      --nav-height: 56px;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: var(--main-bg);
+      font-family: "PayPal Plain", Arial, sans-serif;
+    }
+    body {
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .navbar {
+      width: 100%;
+      height: var(--nav-height);
+      background: var(--main-color);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      box-sizing: border-box;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+    .navbar nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 1em;
+      transition: color 0.2s;
+    }
+    .navbar nav a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(1,33,105,0.08);
+      padding: 32px 24px;
+      box-sizing: border-box;
+    }
+    h1 {
+      color: var(--main-color);
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      background: var(--main-color);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 12px 0;
+      font-size: 1em;
+      font-weight: bold;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #003087;
+    }
+    /* 响应式布局 */
+    @media (max-width: 768px) {
+      .container {
+        margin: 16px 0;
+        border-radius: 0;
+        padding: 20px 8px;
+        max-width: 100vw;
+      }
+      .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 8px;
+        align-items: flex-start;
+      }
+      .navbar nav {
+        margin-top: 8px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .navbar nav a {
+        margin-left: 0;
+        margin-bottom: 8px;
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">PayPal 企业中心</div>
+    <nav>
+      <a href="#">首页</a>
+      <a href="#">企业设置</a>
+      <a href="#">帮助中心</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>设置您的企业账户</h1>
+    <form id="businessForm">
+      <label for="businessName">企业名称</label>
+      <input type="text" id="businessName" name="businessName" placeholder="请输入企业名称" required />
+
+      <label for="businessType">企业类型</label>
+      <select id="businessType" name="businessType" required>
+        <option value="">请选择类型</option>
+        <option value="company">公司</option>
+        <option value="sole">个体工商户</option>
+        <option value="partnership">合伙企业</option>
+      </select>
+
+      <label for="email">联系邮箱</label>
+      <input type="email" id="email" name="email" placeholder="请输入邮箱" required />
+
+      <label for="phone">联系电话</label>
+      <input type="tel" id="phone" name="phone" placeholder="请输入联系电话" />
+
+      <button type="submit" class="btn">提交</button>
+    </form>
+    <button class="btn" onclick="alert('功能开发中，敬请期待！')">联系客服</button>
+  </div>
+  <script>
+    document.getElementById('businessForm').onsubmit = function(e) {
+      e.preventDefault();
+      alert('表单已提交，模拟成功！');
+      // 可以在这里添加实际的表单提交逻辑（如AJAX到后端）
+      this.reset();
+    }
+  </script>
+</body>
+</html>
